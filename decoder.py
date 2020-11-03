@@ -159,7 +159,7 @@ if __name__ == "__main__":
         path = sys.argv[1]
     else: 
         # If path is not sent as an arguement
-        path = input("File path: ")
+        path = input("Complete File path: ")
     
     if path.split('.')[-1] == 'torrent' and os.path.exists(path):
         # If valid file exists in the path
