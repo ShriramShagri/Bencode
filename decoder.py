@@ -119,8 +119,10 @@ def main(file):
     if hashbreak != -1:
         # Start index of hash
         hashstart = hashbreak + file[hashbreak:].find(b':') + 1
+        
         #  length of hash data
         hashlength = int(file[hashbreak+6 : hashstart-1])
+
         # convert hash to hex string to make it readable
         hash = hashlib.md5(file[hashstart:hashstart+hashlength]).hexdigest() 
 
@@ -128,6 +130,8 @@ def main(file):
         data = file[:hashbreak].decode('utf-8') + f'pieces{len(hash)}:' + hash + file[hashstart+hashlength:].decode('utf-8')
 
         torrent = decode(data)
+
+        # prettify print!
 
         print(json.dumps(torrent, sort_keys=True, indent=4))
     
