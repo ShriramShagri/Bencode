@@ -1,6 +1,6 @@
 # A Simple BitTorrent "bencode" Decoder
 
-# Repo: 
+# Repo: https://github.com/ShriramShagri/Bencode
 
 import sys
 import re
@@ -119,7 +119,7 @@ def main(file):
     if hashbreak != -1:
         # Start index of hash
         hashstart = hashbreak + file[hashbreak:].find(b':') + 1
-        
+
         #  length of hash data
         hashlength = int(file[hashbreak+6 : hashstart-1])
 
