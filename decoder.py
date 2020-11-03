@@ -124,7 +124,7 @@ def main(file, path):
         hashlength = int(file[hashbreak+6 : hashstart-1])
 
         # convert hash to hex string to make it readable
-        hash = hashlib.md5(file[hashstart:hashstart+hashlength]).hexdigest() 
+        hash = hashlib.sha1(file[hashstart:hashstart+hashlength]).hexdigest() 
 
         # Putting back data in proper format and convert byte -> str
         data = file[:hashbreak].decode('utf-8') + f'pieces{len(hash)}:' + hash + file[hashstart+hashlength:].decode('utf-8')
