@@ -18,6 +18,6 @@ or
 python decoder.py <file path>
 ```
 
-Former promts to enter the complete file path or the latter just takes it in a an arguement.
+Former promts to enter the complete file path or the latter just takes it in as an arguement.
 
 * As output it prints on terminal as well as saves the json file with the contents in the same folder the torrent file is present
