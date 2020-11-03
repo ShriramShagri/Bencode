@@ -1,4 +1,4 @@
-# BitTorent Bencode (Bee-encode) Decoder
+## BitTorrent Bencode (B-encode) Decoder
 
 Simple bencode decoder in python!
 
