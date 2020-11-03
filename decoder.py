@@ -102,7 +102,7 @@ def decode(text):
     return data
 
 
-def main(file):
+def main(file, path):
     """Main Function
 
     Args:
@@ -134,6 +134,15 @@ def main(file):
         # prettify print!
 
         print(json.dumps(torrent, sort_keys=True, indent=4))
+
+        # Save as json
+
+        jsonpath = os.path.join(os.path.dirname(path), os.path.basename(path).split('.')[0]+'.json')
+
+        with open(jsonpath, 'w') as outfile:
+            json.dump(torrent, outfile, sort_keys=True, indent=4)
+        
+        print("File written to: " + jsonpath)
     
     # If hash data isn't present:
 
@@ -160,6 +169,6 @@ if __name__ == "__main__":
         raise InvalidFileException()
     
     # Main Function:
-    main(file)
+    main(file, path)
 
    
